@@ -1,0 +1,36 @@
+#!/bin/bash
+
+case "$1" in
+  "start")
+    python3 cameras.py &
+  ;;
+
+  "stop")
+    echo EXIT > status
+  ;;
+
+  "gui")
+    python3 gui.py &
+  ;;
+
+  "passthrough")
+    echo PASSTHROUGH > status
+  ;;
+
+  "video")
+    echo VIDEO > status
+  ;;
+
+  "image")
+    echo IMAGE > status
+  ;;
+
+  "status")
+    echo Status: $(cat status)
+  ;;
+
+  *)
+    echo "Usage: zctl [start/stop/status/gui/passthrough/video/image]"
+    exit 1
+  ;;
+esac
