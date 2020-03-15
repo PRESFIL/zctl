@@ -29,6 +29,8 @@ sudo modprobe v4l2loopback
 pip3 install numpy pillow
 ```
 
+You also might want to add an alias to `zctl` for easy access.
+
 To test the output, ffmpeg provides the `ffplay` binary to view webcam output. `ffplay /dev/video0`
 
 The GUI should work just fine without installing anything extra on most GTK platforms. If GTK isn't your thing, the cli utility provides all the functionality as the GUI.
