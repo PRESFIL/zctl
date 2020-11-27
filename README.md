@@ -39,8 +39,6 @@ sudo depmod -a
 sudo modprobe v4l2loopback
 ```
 
----
-
 You also might want to add an alias to `zctl` for easy access.
 
 To test the output, ffmpeg provides the `ffplay` binary to view webcam output. `ffplay /dev/video0`
