@@ -1,32 +1,36 @@
 #!/bin/bash
 
+_scriptpath="$(dirname "$(readlink -f "$0")")"
+
+cd "${_scriptpath}" || { printf '%s' 'Cannot cd to script directory' >&2 ; exit 1 ;}
+
 case "$1" in
   "start")
-    python3 cameras.py &
+    python3 "${_scriptpath}/cameras.py" &
   ;;
 
   "stop")
-    echo EXIT > status
+    echo EXIT > "${_scriptpath}/status"
   ;;
 
   "gui")
-    python3 gui.py &
+    python3 "${_scriptpath}/gui.py" &
   ;;
 
   "passthrough")
-    echo PASSTHROUGH > status
+    echo PASSTHROUGH > "${_scriptpath}/status"
   ;;
 
   "video")
-    echo VIDEO > status
+    echo VIDEO > "${_scriptpath}/status"
   ;;
 
   "image")
-    echo IMAGE > status
+    echo IMAGE > "${_scriptpath}/status"
   ;;
 
   "status")
-    echo Status: $(cat status)
+    echo Status: "$(cat "${_scriptpath}/status")"
   ;;
 
   *)
