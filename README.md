@@ -23,7 +23,7 @@ Running `zctl routingmode` replacing "routingmode" with one of the routing modes
 Debian 10 had a hard time loading the v4l2loopback kernel module, which I solved by disabling UEFI Secure Boot in the BIOS. It's also possible to manually sign the module if you with to keep Secure Boot enabled, but I won't get into that here.
 
 ```
-sudo apt install python3 python3-pip python3-opencv v4l2loopback-utils
+sudo apt install bash coreutils python3 python3-pip python3-opencv v4l2loopback-utils
 sudo depmod -a
 sudo modprobe v4l2loopback
 
@@ -34,7 +34,7 @@ pip3 install numpy pillow
 All dependencies currenly packaged in base ArchLinux repositories.
 
 ```
-sudo pacman -S python3 opencv python-numpy python-pillow hdf5 v4l2loopback-dkms
+sudo pacman -S bash coreutils python3 opencv python-numpy python-pillow hdf5 v4l2loopback-dkms
 sudo depmod -a
 sudo modprobe v4l2loopback
 ```
