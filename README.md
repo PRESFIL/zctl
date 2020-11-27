@@ -19,6 +19,7 @@ There are 3 current video routing modes.
 Running `zctl routingmode` replacing "routingmode" with one of the routing modes above will switch zctl to that mode.
 
 ### Installation
+#### On Debian
 Debian 10 had a hard time loading the v4l2loopback kernel module, which I solved by disabling UEFI Secure Boot in the BIOS. It's also possible to manually sign the module if you with to keep Secure Boot enabled, but I won't get into that here.
 
 ```
@@ -27,6 +28,15 @@ sudo depmod -a
 sudo modprobe v4l2loopback
 
 pip3 install numpy pillow
+```
+
+#### On ArchLinux
+All dependencies currenly packaged in base ArchLinux repositories.
+
+```
+sudo pacman -S python3 opencv python-numpy python-pillow hdf5 v4l2loopback-dkms
+sudo depmod -a
+sudo modprobe v4l2loopback
 ```
 
 You also might want to add an alias to `zctl` for easy access.
