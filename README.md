@@ -53,7 +53,7 @@ jremmons for the pyfakewebcam library: https://github.com/jremmons/pyfakewebcam
 
 
 ### Contribution
-PRs are always welcome. If you want to contact me directly feel free to shoot me an email at nate@nate.to
+PRs are always welcome. If you want to contact me directly feel free to shoot me an email.
 
 
 ### Disclaimer
